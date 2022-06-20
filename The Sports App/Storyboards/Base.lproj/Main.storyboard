@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fiW-Mp-QcU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5sc-m5-kdX">
                                     <size key="itemSize" width="128" height="128"/>
@@ -41,14 +41,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fiW-Mp-QcU" secondAttribute="bottom" id="yTx-Co-gpo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sports" id="Si0-uG-G0W"/>
+                    <navigationItem key="navigationItem" id="ViA-YV-h6G"/>
                     <connections>
                         <outlet property="sportsCollectionView" destination="fiW-Mp-QcU" id="i8Q-xR-D9F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="-208"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="-208.25892857142856"/>
         </scene>
         <!--Favorite Leagues-->
         <scene sceneID="gvp-bb-qmr">
@@ -77,13 +77,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="VaT-9N-BE0"/>
+                        <segue destination="PDe-KS-yzY" kind="relationship" relationship="viewControllers" id="VaT-9N-BE0"/>
                         <segue destination="nVk-uY-Yy8" kind="relationship" relationship="viewControllers" id="sUE-Jz-IM9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGy-o9-M1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="41" y="84"/>
+        </scene>
+        <!--Sports-->
+        <scene sceneID="xPS-cu-Axd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PDe-KS-yzY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sports" id="Si0-uG-G0W"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C54-ak-FKF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZR2-JR-Fai"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjE-06-W2t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="-208.25892857142856"/>
         </scene>
     </scenes>
     <resources>

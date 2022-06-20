@@ -9,6 +9,8 @@ import UIKit
 
 class LeaguesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var strSport: UILabel!
+    @IBOutlet weak var strLeague: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

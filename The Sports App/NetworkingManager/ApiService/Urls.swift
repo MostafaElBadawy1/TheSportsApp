@@ -12,6 +12,7 @@ struct UrlServices {
     var url: String {
         return "https://www.thesportsdb.com/\(endPoint)"
         //https://www.thesportsdb.com/api/v1/json/2/all_sports.php
+        //https://www.thesportsdb.com/api/v1/json/2/all_leagues.php
     }
     
 }
