@@ -10,6 +10,7 @@ import UIKit
 class LeaguesViewController: UIViewController {
 
     @IBOutlet weak var leaguesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

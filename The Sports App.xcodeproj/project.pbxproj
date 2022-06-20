@@ -20,6 +20,7 @@
 		A6CDBA732860EDAD007E4FB6 /* Leagues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CDBA722860EDAD007E4FB6 /* Leagues.storyboard */; };
 		A6CDBA762860EE9F007E4FB6 /* LeaguesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDBA742860EE9F007E4FB6 /* LeaguesTableViewCell.swift */; };
 		A6CDBA772860EE9F007E4FB6 /* LeaguesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CDBA752860EE9F007E4FB6 /* LeaguesTableViewCell.xib */; };
+		A6CDBA792860F1B4007E4FB6 /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDBA782860F1B4007E4FB6 /* Image+Ext.swift */; };
 		A6F4384B285F91380064E052 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F4384A285F91380064E052 /* NetworkingManager.swift */; };
 		A6F4384F285F927C0064E052 /* SportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F4384E285F927C0064E052 /* SportsModel.swift */; };
 		A6F43852285F992E0064E052 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F43851285F992E0064E052 /* ApiService.swift */; };
@@ -44,6 +45,7 @@
 		A6CDBA722860EDAD007E4FB6 /* Leagues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Leagues.storyboard; sourceTree = "<group>"; };
 		A6CDBA742860EE9F007E4FB6 /* LeaguesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesTableViewCell.swift; sourceTree = "<group>"; };
 		A6CDBA752860EE9F007E4FB6 /* LeaguesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesTableViewCell.xib; sourceTree = "<group>"; };
+		A6CDBA782860F1B4007E4FB6 /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
 		A6F4384A285F91380064E052 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		A6F4384E285F927C0064E052 /* SportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsModel.swift; sourceTree = "<group>"; };
 		A6F43851285F992E0064E052 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		A6B87274285F719E0065BC48 = {
 			isa = PBXGroup;
 			children = (
+				A6CDBA782860F1B4007E4FB6 /* Image+Ext.swift */,
 				A6B8727F285F719F0065BC48 /* The Sports App */,
 				A6B8727E285F719F0065BC48 /* Products */,
 			);
@@ -311,6 +314,7 @@
 				A6B8728B285F719F0065BC48 /* The_Sports_App.xcdatamodeld in Sources */,
 				A6F43852285F992E0064E052 /* ApiService.swift in Sources */,
 				A6F43862286081400064E052 /* SportsViewModel.swift in Sources */,
+				A6CDBA792860F1B4007E4FB6 /* Image+Ext.swift in Sources */,
 				A6B87283285F719F0065BC48 /* SceneDelegate.swift in Sources */,
 				A6CDBA712860EDA0007E4FB6 /* LeaguesViewController.swift in Sources */,
 			);
