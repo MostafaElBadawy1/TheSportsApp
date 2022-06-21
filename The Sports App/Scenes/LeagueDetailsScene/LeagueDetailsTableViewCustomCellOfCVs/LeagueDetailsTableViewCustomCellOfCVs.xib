@@ -10,17 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CVsTableViewCustomCell" rowHeight="196" id="KGk-i7-Jjw" customClass="CVsTableViewCustomCell" customModule="The_Sports_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="191" id="KGk-i7-Jjw" customClass="LeagueDetailsTableViewCustomCellOfCVs" customModule="The_Sports_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="U8l-z8-gJs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nwO-36-5TS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hs2-jA-oJP">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kse-ut-qBx">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,14 +29,17 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="U8l-z8-gJs" secondAttribute="bottom" id="1na-bX-pRE"/>
-                    <constraint firstItem="U8l-z8-gJs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="E9q-wd-jac"/>
-                    <constraint firstAttribute="trailing" secondItem="U8l-z8-gJs" secondAttribute="trailing" id="ND5-LV-fMs"/>
-                    <constraint firstItem="U8l-z8-gJs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gzM-DB-geH"/>
+                    <constraint firstItem="nwO-36-5TS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aq0-KF-X3t"/>
+                    <constraint firstAttribute="bottom" secondItem="nwO-36-5TS" secondAttribute="bottom" id="kk5-dQ-vHw"/>
+                    <constraint firstItem="nwO-36-5TS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="olK-hY-KHf"/>
+                    <constraint firstAttribute="trailing" secondItem="nwO-36-5TS" secondAttribute="trailing" id="pUT-6e-MBr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="131.8840579710145" y="132.58928571428572"/>
+            <connections>
+                <outlet property="collectionViewInTableViewCell" destination="nwO-36-5TS" id="0mc-BL-laK"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="131.58482142857142"/>
         </tableViewCell>
     </objects>
     <resources>
