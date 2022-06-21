@@ -32,7 +32,6 @@ class SportsViewController: UIViewController {
     func fetchData() {
         Task.init {
             if let sports = await sportsViewModel.fetch() {
-                print(sports)
                 self.sports = sports
                 DispatchQueue.main.async {
                     self.sportsCollectionView.reloadData()
@@ -61,7 +60,13 @@ extension SportsViewController : UICollectionViewDataSource {
         let cell = sportsCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         cell.strsport.text = sports[indexPath.row].strSport
         cell.strsportThumb.downloaded(from: sports[indexPath.row].strSportThumb)
-        cell.backgroundColor = .systemMint
+        cell.strsportThumb.layer.masksToBounds = true
+        cell.strsportThumb.layer.cornerRadius =  cell.strsportThumb.frame.height/2
+        cell.strsportThumb.layer.borderWidth = 0.5
+        cell.strsportThumb.layer.borderColor = UIColor.black.cgColor
+        cell.strsportThumb.clipsToBounds = true
+        //        cell.backgroundColor = .systemGray
+        // cell.strsportThumb.backgroundColor = .black
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -76,7 +81,7 @@ extension SportsViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         sportsCollectionView.deselectItem(at: indexPath, animated: true)
         let passedData = sports[indexPath.row]
-        // let storyboard = UIStoryboard(name: "Leagues", bundle: nil)
+        
         let vc = UIStoryboard(name: "Leagues", bundle: nil).instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
         vc.passedData = passedData
         self.navigationController?.pushViewController(vc, animated: true)

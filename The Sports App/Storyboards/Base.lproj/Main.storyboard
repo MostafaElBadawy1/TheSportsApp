@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fiW-Mp-QcU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5sc-m5-kdX">
                                     <size key="itemSize" width="128" height="128"/>
@@ -41,7 +41,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fiW-Mp-QcU" secondAttribute="bottom" id="yTx-Co-gpo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ViA-YV-h6G"/>
+                    <navigationItem key="navigationItem" title="Sports" id="ViA-YV-h6G"/>
                     <connections>
                         <outlet property="sportsCollectionView" destination="fiW-Mp-QcU" id="i8Q-xR-D9F"/>
                     </connections>
@@ -60,7 +60,7 @@
                         <viewLayoutGuide key="safeArea" id="JC5-gK-wOQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorite Leagues" id="Ohh-jJ-hm8"/>
+                    <tabBarItem key="tabBarItem" title="Favorite Leagues" image="star" catalog="system" id="Ohh-jJ-hm8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2C-gF-mjb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,6 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.055855869369999998" green="0.039034846880000001" blue="0.30380154640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="PDe-KS-yzY" kind="relationship" relationship="viewControllers" id="VaT-9N-BE0"/>
@@ -89,10 +90,10 @@
         <scene sceneID="xPS-cu-Axd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PDe-KS-yzY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sports" id="Si0-uG-G0W"/>
+                    <tabBarItem key="tabBarItem" title="Sports" image="sportscourt" catalog="system" id="Si0-uG-G0W"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C54-ak-FKF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="C54-ak-FKF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -106,6 +107,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sportscourt" catalog="system" width="128" height="84"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -142,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				A6CDBA702860EDA0007E4FB6 /* LeaguesViewController.swift */,
-				A6CDBA722860EDAD007E4FB6 /* Leagues.storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -223,6 +222,7 @@
 			children = (
 				A6B87286285F719F0065BC48 /* Main.storyboard */,
 				A6B8728E285F71A00065BC48 /* LaunchScreen.storyboard */,
+				A6CDBA722860EDAD007E4FB6 /* Leagues.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
