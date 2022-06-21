@@ -9,6 +9,12 @@ import UIKit
 
 class LatestResultsCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var teamVsTeamLabel: UILabel!
+    @IBOutlet weak var scoreVsScoreLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

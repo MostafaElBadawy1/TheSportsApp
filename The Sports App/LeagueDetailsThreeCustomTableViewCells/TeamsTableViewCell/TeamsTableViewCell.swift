@@ -1,5 +1,5 @@
 //
-//  CVsTableViewCustomCell.swift
+//  TeamsTableViewCell.swift
 //  The Sports App
 //
 //  Created by Mostafa Elbadawy on 21/06/2022.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class CVsTableViewCustomCell: UITableViewCell {
+class TeamsTableViewCell: UITableViewCell {
+    @IBOutlet weak var teamsCollectionViewCellInTableViewCell: UICollectionView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
