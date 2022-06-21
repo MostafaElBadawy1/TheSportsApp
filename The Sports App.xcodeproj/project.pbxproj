@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6159DD728627AB300FB766B /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6159DD628627AB300FB766B /* EventsModel.swift */; };
 		A629AD6228622E9100E51F4E /* UpcomingEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629AD6028622E9100E51F4E /* UpcomingEventsCollectionViewCell.swift */; };
 		A629AD6328622E9100E51F4E /* UpcomingEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A629AD6128622E9100E51F4E /* UpcomingEventsCollectionViewCell.xib */; };
 		A629AD6728623FA000E51F4E /* LatestResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629AD6528623FA000E51F4E /* LatestResultsCollectionViewCell.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6159DD628627AB300FB766B /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		A629AD6028622E9100E51F4E /* UpcomingEventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A629AD6128622E9100E51F4E /* UpcomingEventsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingEventsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A629AD6528623FA000E51F4E /* LatestResultsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResultsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			children = (
 				A6F4384E285F927C0064E052 /* SportsModel.swift */,
 				A6CDBA7A2860F76B007E4FB6 /* LeaguesModel.swift */,
+				A6159DD628627AB300FB766B /* EventsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				A6F43857285F9E730064E052 /* JsonDecoder.swift in Sources */,
 				A6B8728B285F719F0065BC48 /* The_Sports_App.xcdatamodeld in Sources */,
 				A6F43852285F992E0064E052 /* ApiService.swift in Sources */,
+				A6159DD728627AB300FB766B /* EventsModel.swift in Sources */,
 				A6F43862286081400064E052 /* SportsViewModel.swift in Sources */,
 				A66219BE28625664000502DC /* UpcomingEventsTableViewCell.swift in Sources */,
 				A6CDBA792860F1B4007E4FB6 /* Image+Ext.swift in Sources */,
