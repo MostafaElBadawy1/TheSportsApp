@@ -80,10 +80,11 @@ extension SportsViewController : UICollectionViewDataSource {
 extension SportsViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         sportsCollectionView.deselectItem(at: indexPath, animated: true)
-        let passedData = sports[indexPath.row]
+        let passedDatavc = sports[indexPath.row]
         
         let vc = UIStoryboard(name: "Leagues", bundle: nil).instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
-        vc.passedData = passedData
+        vc.passedData = passedDatavc
+        vc.leagueName = sports[indexPath.row].strSport
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

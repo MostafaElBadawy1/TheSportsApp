@@ -17,5 +17,7 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func configerCollectionCell() {
+        
+    }
 }
