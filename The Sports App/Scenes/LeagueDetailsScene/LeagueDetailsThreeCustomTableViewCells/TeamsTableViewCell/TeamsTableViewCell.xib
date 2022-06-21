@@ -20,23 +20,34 @@
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dNn-gJ-KtB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="211"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YdP-Gu-YDu">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YdP-Gu-YDu">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au8-pf-clh">
+                        <rect key="frame" x="15" y="20" width="78" height="32.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Au8-pf-clh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Duo-fb-cXc"/>
                     <constraint firstItem="dNn-gJ-KtB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JBS-kG-eqO"/>
+                    <constraint firstItem="Au8-pf-clh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="McU-jk-TUE"/>
                     <constraint firstAttribute="trailing" secondItem="dNn-gJ-KtB" secondAttribute="trailing" id="OHD-4A-Jjk"/>
                     <constraint firstAttribute="bottom" secondItem="dNn-gJ-KtB" secondAttribute="bottom" id="jLL-iY-WP5"/>
                     <constraint firstItem="dNn-gJ-KtB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qq9-be-dCh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="131.8840579710145" y="130.91517857142856"/>
+            <connections>
+                <outlet property="teamsCollectionViewInTableViewCell" destination="dNn-gJ-KtB" id="G0w-gm-CHU"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="130.24553571428572"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -19,8 +19,10 @@ class LeagueDetailsViewController: UIViewController {
         super.viewDidLoad()
         leagueDetailsTableView.delegate = self
         leagueDetailsTableView.dataSource = self
-        leagueDetailsTableView.register(UINib(nibName: "LeagueDetailsTableViewCustomCellOfCVs", bundle: .main), forCellReuseIdentifier: "LeagueDetailsTableViewCustomCellOfCVs")
-//        leagueDetailsTableView.register(UINib(nibName: "CVsTableViewCustomCell", bundle: .main), forCellReuseIdentifier: "CVsTableViewCustomCell")
+        leagueDetailsTableView.register(UINib(nibName: "UpcomingEventsTableViewCell", bundle: .main), forCellReuseIdentifier: "UpcomingEventsTableViewCell")
+        leagueDetailsTableView.register(UINib(nibName: "LatestResultsTableViewCell", bundle: .main), forCellReuseIdentifier: "LatestResultsTableViewCell")
+        leagueDetailsTableView.register(UINib(nibName: "TeamsTableViewCell", bundle: .main), forCellReuseIdentifier: "TeamsTableViewCell")
+
     }
   
 }
@@ -30,7 +32,15 @@ extension LeagueDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = leagueDetailsTableView.dequeueReusableCell(withIdentifier: "LeagueDetailsTableViewCustomCellOfCVs", for: indexPath) as! LeagueDetailsTableViewCustomCellOfCVs
+        if indexPath.row == 0 {
+        let cell = leagueDetailsTableView.dequeueReusableCell(withIdentifier: "UpcomingEventsTableViewCell", for: indexPath) as! UpcomingEventsTableViewCell
+        return cell
+    }
+        if indexPath.row == 1 {
+            let cell = leagueDetailsTableView.dequeueReusableCell(withIdentifier: "LatestResultsTableViewCell", for: indexPath) as! LatestResultsTableViewCell
+            return cell
+        }
+        let cell = leagueDetailsTableView.dequeueReusableCell(withIdentifier: "TeamsTableViewCell", for: indexPath) as! TeamsTableViewCell
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

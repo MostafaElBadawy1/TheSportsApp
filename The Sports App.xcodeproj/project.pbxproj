@@ -200,7 +200,6 @@
 				A6B87298285F7CCF0065BC48 /* AppDelegate */,
 				A6B87297285F7C580065BC48 /* NetworkingManager */,
 				A6F4385A28607D230064E052 /* Scenes */,
-				A66219B8286255AB000502DC /* LeagueDetailsThreeCustomTableViewCells */,
 				A6F4385F28607EB20064E052 /* Storyboards */,
 				A6F43850285F92800064E052 /* Models */,
 				A6F4386028607EE20064E052 /* DataBase */,
@@ -278,6 +277,7 @@
 				A6CDBA7F28620939007E4FB6 /* ViewController */,
 				A6CDBA802862094B007E4FB6 /* ViewModel */,
 				A629AD78286241AB00E51F4E /* LeagueDetailsTableViewCustomCellOfCVs */,
+				A66219B8286255AB000502DC /* LeagueDetailsThreeCustomTableViewCells */,
 				A629AD7D2862436900E51F4E /* LeaguesDetailsCollectionViewCustomCells */,
 			);
 			path = LeagueDetailsScene;
