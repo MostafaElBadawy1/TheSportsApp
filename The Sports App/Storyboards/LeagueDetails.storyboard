@@ -16,15 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFv-is-DSF">
-                                <rect key="frame" x="0.0" y="44" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="&lt;Back"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3sy-qc-wgh">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFv-is-DSF">
+                                <rect key="frame" x="20" y="44" width="41" height="32"/>
+                                <color key="tintColor" red="0.055855869369999998" green="0.039034846880000001" blue="0.30380154640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backToLeaguesVC:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BrS-wx-krd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3sy-qc-wgh" firstAttribute="top" secondItem="cFv-is-DSF" secondAttribute="bottom" constant="8" symbolic="YES" id="2t9-KA-0ga"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3sy-qc-wgh" secondAttribute="trailing" id="CMp-fH-yVb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3sy-qc-wgh" secondAttribute="bottom" id="KNv-uw-7X5"/>
+                            <constraint firstItem="3sy-qc-wgh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="M0j-4o-0S7"/>
+                            <constraint firstItem="3sy-qc-wgh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="aSl-mY-jsY"/>
+                            <constraint firstItem="cFv-is-DSF" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="iHb-WJ-XeS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

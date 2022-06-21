@@ -8,14 +8,15 @@
 import UIKit
 
 class LeaguesViewController: UIViewController {
+    // MARK: - Props
     var passedData : Sport?
-    let leaguesViewModel = LeaguesViewModel()
-    var leagues = [League]()
     var leagueName: String?
+    var leagues = [League]()
     var leaguesArray = [League]()
-    
+    var leaguesViewModel = LeaguesViewModel()
+    // MARK: - IBOutlets
     @IBOutlet weak var leaguesTableView: UITableView!
-    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,8 +61,7 @@ extension LeaguesViewController: UITableViewDataSource {
         
         let vc = UIStoryboard(name: "LeagueDetails", bundle: nil).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
         vc.passedDataz = passedDatavc
-       // vc.leagueName = leaguesArray[indexPath.row].strSport
-        //vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
         
     }

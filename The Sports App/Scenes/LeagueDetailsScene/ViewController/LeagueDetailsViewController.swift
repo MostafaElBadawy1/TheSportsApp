@@ -9,22 +9,32 @@ import UIKit
 
 class LeagueDetailsViewController: UIViewController {
     var passedDataz : League?
-    @IBAction
+    @IBOutlet weak var leagueDetailsTableView: UITableView!
+    
+    @IBAction func backToLeaguesVC(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        leagueDetailsTableView.delegate = self
+        leagueDetailsTableView.dataSource = self
+        leagueDetailsTableView.register(UINib(nibName: "CVsTableViewCustomCell", bundle: .main), forCellReuseIdentifier: "CVsTableViewCustomCell")
+    }
+  
+}
+extension LeagueDetailsViewController: UITableViewDelegate {
+    
+}
+extension LeagueDetailsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = leagueDetailsTableView.dequeueReusableCell(withIdentifier: "CVsTableViewCustomCell", for: indexPath)
+        
+        return cell
     }
-    */
-
+    
+    
 }
