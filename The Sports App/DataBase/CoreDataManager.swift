@@ -13,9 +13,9 @@ class CoreDataManger {
     static let shared = CoreDataManger()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func fetch<T: NSManagedObject>(returnType: T.Type , completion: @escaping ([T]) -> Void) {
+    func fetch<T: NSManagedObject>(entityName: T.Type , completion: @escaping ([T]) -> Void) {
         do {
-            guard let result = try context.fetch(returnType.fetchRequest()) as? [T] else {
+            guard let result = try context.fetch(entityName.fetchRequest()) as? [T] else {
                 return
             }
             completion(result)
@@ -24,7 +24,7 @@ class CoreDataManger {
         }
     }
     
-    func delete<T: NSManagedObject>(returnType: T.Type, delete: T) {
+    func delete<T: NSManagedObject>(entityName: T.Type, delete: T) {
         context.delete(delete.self)
         do {
             try context.save()

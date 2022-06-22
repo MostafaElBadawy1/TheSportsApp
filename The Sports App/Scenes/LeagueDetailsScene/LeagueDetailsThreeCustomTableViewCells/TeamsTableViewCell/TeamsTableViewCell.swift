@@ -47,7 +47,7 @@ extension TeamsTableViewCell: UICollectionViewDelegate {
         let vc = UIStoryboard(name: "TeamsDetails", bundle: nil).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
         vc.passedDataz = passedDatavc
         //vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        //self.present(vc, animated: true)
     }
 }
 extension TeamsTableViewCell: UICollectionViewDataSource {

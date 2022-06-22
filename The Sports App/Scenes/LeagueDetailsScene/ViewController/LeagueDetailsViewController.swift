@@ -10,9 +10,28 @@ import UIKit
 class LeagueDetailsViewController: UIViewController {
     var passedDataz : League?
     var leagueDetailsViewModel = LeagueDetailsViewModel()
-    var upcomtingEvents = [UpcomtingEvents]()
+    var upcomtingEvents = [Bookmarks]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    @IBAction func favoriteButton(_ sender: UIButton) {
+        if bookmarkBtn.titleLabel?.text == " " {
+            //
+            Bookmarks(context: self.context).leagureTitle = leagueName.text ?? ""
+            do {
+                try self.context.save()
+                bookmarkBtn.setTitle("   ", for: .normal)
+                bookmarkBtn.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            } catch {
+                print("Error")
+            }
+            //
+        } else {
+            bookmarkBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            // delete logic
+        }
+    }
     @IBOutlet weak var leagueName: UILabel!
+    @IBOutlet weak var bookmarkBtn: UIButton!
     @IBOutlet weak var leagueDetailsTableView: UITableView!
     
     @IBAction func backToLeaguesVC(_ sender: UIButton) {
@@ -27,6 +46,12 @@ class LeagueDetailsViewController: UIViewController {
         leagueDetailsTableView.register(UINib(nibName: "TeamsTableViewCell", bundle: .main), forCellReuseIdentifier: "TeamsTableViewCell")
         leagueName.text = passedDataz?.strLeague
         //leagueName.layer.cornerCurve = .circular
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // check if item is availabe or not
+        // if aviable bookmarks.fill image
+        // else bookmarks
     }
     
    }
