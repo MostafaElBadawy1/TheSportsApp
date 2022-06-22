@@ -8,9 +8,11 @@
 import Foundation
 // MARK: - LatestResultsModel
 struct LatestResultsModel: Codable {
-    let LatestResults: [LatestResults]
+    let events: [LatestResults]
 }
 // MARK: - LatestResults
 struct LatestResults: Codable {
-    let strHomeTeam, strAwayTeam, strTime, dateEvent: String
+    let strHomeTeam, strAwayTeam: String
+    let strTime, dateEvent: String
+    let intHomeScore, intAwayScore: String
 }

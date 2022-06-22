@@ -10,7 +10,7 @@ import UIKit
 class LeagueDetailsViewController: UIViewController {
     var passedDataz : League?
     var leagueDetailsViewModel = LeagueDetailsViewModel()
-    var upcomtingEvents = [Events]()
+    var upcomtingEvents = [UpcomtingEvents]()
 
     @IBOutlet weak var leagueName: UILabel!
     @IBOutlet weak var leagueDetailsTableView: UITableView!
@@ -25,25 +25,11 @@ class LeagueDetailsViewController: UIViewController {
         leagueDetailsTableView.register(UINib(nibName: "UpcomingEventsTableViewCell", bundle: .main), forCellReuseIdentifier: "UpcomingEventsTableViewCell")
         leagueDetailsTableView.register(UINib(nibName: "LatestResultsTableViewCell", bundle: .main), forCellReuseIdentifier: "LatestResultsTableViewCell")
         leagueDetailsTableView.register(UINib(nibName: "TeamsTableViewCell", bundle: .main), forCellReuseIdentifier: "TeamsTableViewCell")
-       // fetchUpcomtingEventsData()
         leagueName.text = passedDataz?.strLeague
         //leagueName.layer.cornerCurve = .circular
     }
     
-//    func fetchUpcomtingEventsData() {
-//        Task.init {
-//            if let upcomtingEvents = await leagueDetailsViewModel.fetchUpcomingEvents() {
-//                print(upcomtingEvents)
-//                self.upcomtingEvents = upcomtingEvents
-//                DispatchQueue.main.async {
-//                self.leagueDetailsTableView.reloadData()
-//                }
-//            } else {
-//                print("error")
-//            }
-//        }
-//    }
-}
+   }
 extension LeagueDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3

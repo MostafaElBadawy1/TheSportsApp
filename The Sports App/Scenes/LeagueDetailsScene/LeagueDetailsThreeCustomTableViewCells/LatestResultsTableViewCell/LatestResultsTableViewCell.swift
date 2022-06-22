@@ -8,18 +8,34 @@
 import UIKit
 
 class LatestResultsTableViewCell: UITableViewCell {
+    var latestResults =  [LatestResults]()
+    let leagueDetailsViewModel = LeagueDetailsViewModel()
     @IBOutlet weak var latestResultsCollectionViewInTableViewCell: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         latestResultsCollectionViewInTableViewCell.delegate = self
         latestResultsCollectionViewInTableViewCell.dataSource = self
         latestResultsCollectionViewInTableViewCell.register(UINib(nibName: "LatestResultsCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "LatestResultsCollectionViewCell")
+        fetchLatestResultsData()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func fetchLatestResultsData() {
+        Task.init {
+            if let latestResults = await leagueDetailsViewModel.fetchLatestResults() {
+                
+                self.latestResults = latestResults
+                DispatchQueue.main.async {
+               self.latestResultsCollectionViewInTableViewCell.reloadData()
+                }
+            } else {
+                print("error")
+            }
+        }
     }
     
 }
@@ -31,19 +47,24 @@ extension LatestResultsTableViewCell: UICollectionViewDelegate {
 }
 extension LatestResultsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        //print(latestResults.count)
+        return latestResults.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = latestResultsCollectionViewInTableViewCell.dequeueReusableCell(withReuseIdentifier: "LatestResultsCollectionViewCell", for: indexPath) as! LatestResultsCollectionViewCell
 
-        cell.homeTeamLabel.text = "real"
-        cell.awayTeamLabel.text = "man city"
-        cell.homeScoreLabel.text = "3"
-        cell.awayScoreLabel.text = "2"
-
-        cell.dateLabel.text = "12/5"
-        cell.timeLabel.text = "2:30"
+        cell.homeTeamLabel.text = latestResults[indexPath.row].strHomeTeam
+        cell.awayTeamLabel.text = latestResults[indexPath.row].strAwayTeam
+        cell.homeScoreLabel.text = latestResults[indexPath.row].intHomeScore
+        cell.awayScoreLabel.text = latestResults[indexPath.row].intAwayScore
+        cell.dateLabel.text = latestResults[indexPath.row].dateEvent
+        cell.timeLabel.text = latestResults[indexPath.row].strTime
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius =  cell.frame.height/4
+        cell.layer.borderWidth = 2.5
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.clipsToBounds = true
         return cell
 
     }

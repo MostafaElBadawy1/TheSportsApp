@@ -8,7 +8,7 @@
 import Foundation
 // MARK: - TeamsModel
 struct TeamsModel: Codable {
-    let Teams: [Teams]
+    let teams: [Teams]
 }
 // MARK: - Teams
 struct Teams: Codable {
