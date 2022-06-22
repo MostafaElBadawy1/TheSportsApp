@@ -9,5 +9,5 @@ import Foundation
 
 protocol ApiService {
 
-    func fetchSports<T: Codable>(endPoint: String, model: T.Type) async throws -> T
+    func fetchNetworkingData<T: Codable>(endPoint: String, model: T.Type) async throws -> T
 }

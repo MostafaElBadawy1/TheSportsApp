@@ -30,7 +30,7 @@ class LeaguesViewController: UIViewController {
     func fetchData() {
         Task.init {
             if let league = await leaguesViewModel.fetch() {
-                print(league)
+                //print(league)
                 self.leagues = league
                 DispatchQueue.main.async {
                 self.leaguesTableView.reloadData()

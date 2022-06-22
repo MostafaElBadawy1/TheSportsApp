@@ -14,9 +14,12 @@ class LeagueDetailsViewModel {
     init(apiService: ApiService = NetworkManager()) {
         self.apiService = apiService
     }
-    func fetch() async ->  [League]? {
-        let leaguesData = try? await apiService.fetchSports(endPoint: "api/v1/json/2/all_leagues.php", model: LeaguesModel.self)
-      
-        return leaguesData?.leagues
+    //MARK: Fetching Upcoming Events
+    func fetchUpcomingEvents() async ->  [Events]? {
+        let upcomtingEventsData = try? await apiService.fetchNetworkingData(endPoint: "api/v1/json/2/eventsseason.php?id=4328&s=2022-2023", model: UpcomtingEventsModel.self)
+        print(upcomtingEventsData)
+
+        return upcomtingEventsData?.events
     }
 }
+

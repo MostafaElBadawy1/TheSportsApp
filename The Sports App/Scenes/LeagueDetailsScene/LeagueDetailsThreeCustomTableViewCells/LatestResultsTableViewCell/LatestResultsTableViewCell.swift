@@ -36,8 +36,12 @@ extension LatestResultsTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = latestResultsCollectionViewInTableViewCell.dequeueReusableCell(withReuseIdentifier: "LatestResultsCollectionViewCell", for: indexPath) as! LatestResultsCollectionViewCell
-        cell.teamVsTeamLabel.text = "real x barca"
-        cell.scoreVsScoreLabel.text = "2 x 2"
+
+        cell.homeTeamLabel.text = "real"
+        cell.awayTeamLabel.text = "man city"
+        cell.homeScoreLabel.text = "3"
+        cell.awayScoreLabel.text = "2"
+
         cell.dateLabel.text = "12/5"
         cell.timeLabel.text = "2:30"
         return cell

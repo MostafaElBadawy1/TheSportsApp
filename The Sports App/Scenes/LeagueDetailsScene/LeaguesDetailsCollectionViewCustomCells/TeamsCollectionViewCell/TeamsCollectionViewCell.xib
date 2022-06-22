@@ -10,19 +10,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamsCollectionViewCell" id="gTV-IL-0wX" customClass="TeamsCollectionViewCell" customModule="The_Sports_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="210" height="193"/>
+            <rect key="frame" x="0.0" y="0.0" width="210" height="234"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="210" height="193"/>
+                <rect key="frame" x="0.0" y="0.0" width="210" height="234"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ele-ci-7PX">
-                        <rect key="frame" x="20" y="20" width="75" height="66"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ele-ci-7PX">
+                        <rect key="frame" x="0.0" y="47.5" width="210" height="104.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="109" id="Al8-RB-5Vl"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beb-o9-KsF">
-                        <rect key="frame" x="49" y="130" width="109" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beb-o9-KsF">
+                        <rect key="frame" x="31" y="184" width="159" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -30,12 +31,23 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="210" height="193"/>
+            <constraints>
+                <constraint firstItem="beb-o9-KsF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="31" id="6j5-qD-4iD"/>
+                <constraint firstItem="ele-ci-7PX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="45" id="6zM-ny-4lF"/>
+                <constraint firstItem="ele-ci-7PX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CaZ-Em-KL7"/>
+                <constraint firstAttribute="trailing" secondItem="beb-o9-KsF" secondAttribute="trailing" constant="20" id="JPp-fQ-bXW"/>
+                <constraint firstAttribute="trailing" secondItem="ele-ci-7PX" secondAttribute="trailing" id="LtD-7R-5qw"/>
+                <constraint firstItem="beb-o9-KsF" firstAttribute="top" secondItem="ele-ci-7PX" secondAttribute="bottom" constant="30" id="Tab-dl-h7Y"/>
+            </constraints>
+            <size key="customSize" width="210" height="234"/>
             <connections>
                 <outlet property="teamImage" destination="ele-ci-7PX" id="ebK-yJ-aq5"/>
                 <outlet property="teamName" destination="beb-o9-KsF" id="o4C-fB-EZN"/>
             </connections>
-            <point key="canvasLocation" x="247.82608695652175" y="122.87946428571428"/>
+            <point key="canvasLocation" x="247.82608695652175" y="136.60714285714286"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="pencil.slash" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

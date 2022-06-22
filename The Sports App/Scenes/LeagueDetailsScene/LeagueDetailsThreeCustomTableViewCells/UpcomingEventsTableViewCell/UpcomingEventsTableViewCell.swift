@@ -15,7 +15,6 @@ class UpcomingEventsTableViewCell: UITableViewCell {
         UpcomingEventsCollectionViewInTableViewCell.delegate = self
         UpcomingEventsCollectionViewInTableViewCell.dataSource = self
         UpcomingEventsCollectionViewInTableViewCell.register(UINib(nibName: "UpcomingEventsCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "UpcomingEventsCollectionViewCell")
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,7 +29,7 @@ extension UpcomingEventsTableViewCell: UICollectionViewDelegate {
 }
 extension UpcomingEventsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -38,7 +37,7 @@ extension UpcomingEventsTableViewCell: UICollectionViewDataSource {
         cell.strEvent.text = "aaa"
         cell.dateLabel.text = "bbb"
         cell.timeLabel.text = "ccc"
-        //cell.sectionHeader = "aa"
+        
         return cell
     }
    

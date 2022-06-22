@@ -6,11 +6,11 @@
 //
 
 import Foundation
-// MARK: - EventsModel
-struct EventsModel: Codable {
-    let Events: [Event]
+// MARK: - UpcomtingEventsModel
+struct UpcomtingEventsModel: Codable {
+    let events: [Events]
 }
-// MARK: - League
-struct Event: Codable {
+// MARK: - UpcomtingEvents
+struct Events: Codable {
     let strEvent, strTime, dateEvent: String
 }

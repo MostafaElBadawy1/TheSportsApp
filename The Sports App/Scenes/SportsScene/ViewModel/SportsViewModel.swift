@@ -13,7 +13,7 @@ class SportsViewModel {
         self.apiService = apiService
     }
     func fetch() async ->  [Sport]? {
-        let sports = try? await apiService.fetchSports(endPoint: "api/v1/json/2/all_sports.php", model: SportsModel.self)
+        let sports = try? await apiService.fetchNetworkingData(endPoint: "api/v1/json/2/all_sports.php", model: SportsModel.self)
         return sports?.sports
     }
 }
