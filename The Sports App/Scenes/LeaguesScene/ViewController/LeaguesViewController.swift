@@ -30,7 +30,7 @@ class LeaguesViewController: UIViewController {
     func fetchData() {
         Task.init {
             if let league = await leaguesViewModel.fetch() {
-                //print(league)
+                print(league)
                 self.leagues = league
                 DispatchQueue.main.async {
                 self.leaguesTableView.reloadData()
@@ -42,7 +42,15 @@ class LeaguesViewController: UIViewController {
     }
 }
 extension LeaguesViewController: UITableViewDelegate {
-    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        leaguesTableView.deselectRow(at: indexPath, animated: true)
+        let passedDatavc = leaguesArray[indexPath.row]
+        
+        let vc = UIStoryboard(name: "LeagueDetails", bundle: nil).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
+        vc.passedDataz = passedDatavc
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+            }
     }
 extension LeaguesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,16 +63,7 @@ extension LeaguesViewController: UITableViewDataSource {
         cell.strLeague.text = leaguesArray[indexPath.row].strLeague
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        leaguesTableView.deselectRow(at: indexPath, animated: true)
-        let passedDatavc = leaguesArray[indexPath.row]
-        
-        let vc = UIStoryboard(name: "LeagueDetails", bundle: nil).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
-        vc.passedDataz = passedDatavc
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
-        
-    }
+ 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80

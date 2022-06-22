@@ -9,6 +9,7 @@ import UIKit
 
 class TeamsTableViewCell: UITableViewCell {
     var teams =  [Teams]()
+    //var passedData : Sport?
     let leagueDetailsViewModel = LeagueDetailsViewModel()
     @IBOutlet weak var teamsCollectionViewInTableViewCell: UICollectionView!
 
@@ -40,7 +41,14 @@ class TeamsTableViewCell: UITableViewCell {
 
 }
 extension TeamsTableViewCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let passedDatavc = teams[indexPath.row]
+        
+        let vc = UIStoryboard(name: "TeamsDetails", bundle: nil).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
+        vc.passedDataz = passedDatavc
+        //vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
 }
 extension TeamsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +66,7 @@ extension TeamsTableViewCell: UICollectionViewDataSource {
         cell.clipsToBounds = true
         return cell
     }
+
     
     
 }
