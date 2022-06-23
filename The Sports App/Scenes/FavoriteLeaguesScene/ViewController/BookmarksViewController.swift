@@ -14,7 +14,11 @@ class BookmarksViewController: UIViewController {
         super.viewDidLoad()
         fetchBookmarks()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchBookmarks()
+       
+    }
     func fetchBookmarks() {
         CoreDataManger.shared.fetch(entityName: Bookmarks.self) { (bookmarks) in
             self.bookmarksModel = bookmarks

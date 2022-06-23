@@ -20,7 +20,7 @@ class CoreDataManger {
             }
             completion(result)
         } catch {
-            print("Error in saving")
+            print("Error In Saving")
         }
     }
     

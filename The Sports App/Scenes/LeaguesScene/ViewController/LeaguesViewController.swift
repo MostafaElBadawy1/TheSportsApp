@@ -59,14 +59,14 @@ extension LeaguesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = leaguesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
-        cell.strSport.text = leaguesArray[indexPath.row].strSport
+        
         cell.strLeague.text = leaguesArray[indexPath.row].strLeague
         return cell
     }
  
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 70
     }
     override func viewDidAppear(_ animated: Bool) {
         for x in leagues {

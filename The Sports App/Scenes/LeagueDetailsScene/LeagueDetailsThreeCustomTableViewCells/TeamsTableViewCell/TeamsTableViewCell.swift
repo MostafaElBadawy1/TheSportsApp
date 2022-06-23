@@ -44,10 +44,11 @@ extension TeamsTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let passedDatavc = teams[indexPath.row]
         
-        let vc = UIStoryboard(name: "TeamsDetails", bundle: nil).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
-        vc.passedDataz = passedDatavc
+//        let vc = UIStoryboard(name: "TeamsDetails", bundle: nil).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
+//        vc.passedDataz = passedDatavc
         //vc.modalPresentationStyle = .fullScreen
         //self.present(vc, animated: true)
+       // self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 extension TeamsTableViewCell: UICollectionViewDataSource {

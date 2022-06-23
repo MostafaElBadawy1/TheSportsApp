@@ -16,28 +16,54 @@
                 <rect key="frame" x="0.0" y="0.0" width="385" height="93"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-W9-Ggc">
-                        <rect key="frame" x="284" y="35" width="87" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxJ-RM-8gY">
+                        <rect key="frame" x="20" y="14" width="133" height="57"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxJ-RM-8gY">
-                        <rect key="frame" x="20" y="37" width="230" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UlJ-a0-uAH">
+                        <rect key="frame" x="167" y="4" width="65" height="62.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="65" id="obZ-pH-KKA"/>
+                            <constraint firstAttribute="width" constant="65" id="wbE-U1-UDO"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCH-Do-tH2">
+                        <rect key="frame" x="300" y="21" width="69" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" image="play" catalog="system">
+                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                        </buttonConfiguration>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="WxJ-RM-8gY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="5cf-jS-7tI"/>
+                    <constraint firstItem="WxJ-RM-8gY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="AU0-ik-V1G"/>
+                    <constraint firstAttribute="bottom" secondItem="WxJ-RM-8gY" secondAttribute="bottom" constant="22" id="F83-9B-0eH"/>
+                    <constraint firstItem="UlJ-a0-uAH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G2y-i8-E2u"/>
+                    <constraint firstItem="UlJ-a0-uAH" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="KTg-Hq-vsk"/>
+                    <constraint firstItem="UlJ-a0-uAH" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Qxr-z6-WNa"/>
+                    <constraint firstItem="UlJ-a0-uAH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WxJ-RM-8gY" secondAttribute="trailing" constant="14" id="cw0-ib-bdd"/>
+                    <constraint firstItem="UlJ-a0-uAH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="167" id="grK-fF-Ygv"/>
+                    <constraint firstAttribute="trailing" secondItem="wCH-Do-tH2" secondAttribute="trailing" constant="30" id="iGK-QZ-0IL"/>
+                    <constraint firstItem="wCH-Do-tH2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="lvg-uD-ave"/>
+                    <constraint firstAttribute="bottom" secondItem="wCH-Do-tH2" secondAttribute="bottom" constant="27" id="q9l-eq-5RB"/>
+                    <constraint firstItem="wCH-Do-tH2" firstAttribute="leading" secondItem="UlJ-a0-uAH" secondAttribute="trailing" constant="68" id="tgo-9m-xYm"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="strLeague" destination="WxJ-RM-8gY" id="QmQ-up-vl1"/>
-                <outlet property="strSport" destination="d9Y-W9-Ggc" id="EcE-Co-iaL"/>
             </connections>
             <point key="canvasLocation" x="177.536231884058" y="83.370535714285708"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="person.crop.square" catalog="system" width="128" height="114"/>
+        <image name="play" catalog="system" width="120" height="128"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -9,6 +9,8 @@ import UIKit
 
 class LeagueDetailsViewController: UIViewController {
     var passedDataz : League?
+    var passedDatavc : Teams?
+    var teams =  [Teams]()
     var leagueDetailsViewModel = LeagueDetailsViewModel()
     var upcomtingEvents = [Bookmarks]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -80,5 +82,11 @@ extension LeagueDetailsViewController: UITableViewDataSource {
 extension LeagueDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         leagueDetailsTableView.deselectRow(at: indexPath, animated: true)
+//        let vc = UIStoryboard(name: "TeamDetails", bundle: .main).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
+//        vc.passedDataz = passedDatavc
+//        //vc.modalPresentationStyle = .fullScreen
+//        //self.present(vc, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
+
     }
 }
