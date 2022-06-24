@@ -46,6 +46,7 @@ extension LatestResultsTableViewCell: UICollectionViewDelegate {
     }
     
 }
+// MARK: - CollectionViewDataSource
 extension LatestResultsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //print(latestResults.count)
@@ -67,10 +68,7 @@ extension LatestResultsTableViewCell: UICollectionViewDataSource {
         cell.layer.borderColor = UIColor.black.cgColor
         cell.clipsToBounds = true
         return cell
-
     }
-    
-    
 }
 // MARK: - CollectionViewDelegateFlowLayout
 extension LatestResultsTableViewCell: UICollectionViewDelegateFlowLayout{

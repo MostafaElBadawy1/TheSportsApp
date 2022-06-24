@@ -25,8 +25,6 @@ class UpcomingEventsTableViewCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
         func fetchUpcomtingEventsData() {
         Task.init {
@@ -58,7 +56,6 @@ extension UpcomingEventsTableViewCell: UICollectionViewDataSource {
         cell.strEvent.text = upcomtingEvents[indexPath.row].strEvent
         cell.dateLabel.text = upcomtingEvents[indexPath.row].dateEvent
         cell.timeLabel.text = upcomtingEvents[indexPath.row].strTime
-//        cell.strEvent.text = "asasas"
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius =  cell.frame.height/4
         cell.layer.borderWidth = 2.5
@@ -75,7 +72,6 @@ extension UpcomingEventsTableViewCell: UICollectionViewDataSource {
     }
     
 }
-// MARK: - CollectionViewDelegateFlowLayout
 extension UpcomingEventsTableViewCell: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let leftAndRightPaddings: CGFloat = 1
@@ -84,11 +80,4 @@ extension UpcomingEventsTableViewCell: UICollectionViewDelegateFlowLayout{
         return CGSize(width: width, height: 160)
     }
 }
-//extension LeagueDetailsViewController: idLeaguePass {
-//    func theidLeague(id: String) {
-//      print("the id is\(id)")
-//    }
-//    
-//    
-//    
-//}
+

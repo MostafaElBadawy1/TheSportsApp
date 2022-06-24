@@ -8,10 +8,7 @@
 import Foundation
 
 class LeagueDetailsViewModel {
-    //var leagueArray: [League]?
-    //var filterSport: Sport?
     var filterLeague : League?
-    
     let apiService: ApiService
     init(apiService: ApiService = NetworkManager.shared) {
         self.apiService = apiService
