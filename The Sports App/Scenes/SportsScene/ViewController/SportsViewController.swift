@@ -9,8 +9,11 @@ import UIKit
 
 class SportsViewController: UIViewController {
     // MARK: - Props
+    var loadingIndicator = UIActivityIndicatorView()
     let sportsViewModel = SportsViewModel()
     var sports = [Sport]()
+    let alert : UIAlertController = UIAlertController(title:"You Are Disconnected!" , message: "Please Connect to Network", preferredStyle: .alert)
+    
     // MARK: - IBOutlets
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     // MARK: - LifeCycle
@@ -19,9 +22,14 @@ class SportsViewController: UIViewController {
         initViewModel()
         initView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        netMonitorAlert()
+    }
     // MARK: - Main Functions
     func initView() {
         tableViewConfig()
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         //handleEmpty()
     }
     func initViewModel() {
@@ -46,9 +54,21 @@ class SportsViewController: UIViewController {
         sportsCollectionView.dataSource = self
         sportsCollectionView.delegate = self
         sportsCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "CollectionViewCell")
-        //        tableView.rowHeight = 60
-        //        tableView.tableFooterView = nil
-        //        tableView.tableHeaderView = nil
+       
+    }
+    func netMonitorAlert() {
+        loadingIndicator.style = .medium
+        loadingIndicator.center = view.center
+       
+        view.addSubview(loadingIndicator)
+        if NetworkMonitor.shared.isConnected  {
+            print("you are connected")
+            loadingIndicator.isHidden = true
+        } else {
+            loadingIndicator.startAnimating()
+         
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 // MARK: - CollectionViewDataSource
@@ -83,7 +103,7 @@ extension SportsViewController : UICollectionViewDelegate {
         let passedDatavc = sports[indexPath.row]
         
         let vc = UIStoryboard(name: "Leagues", bundle: nil).instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
-        vc.passedData = passedDatavc
+        vc.passedDataToLeaguesVC = passedDatavc
         vc.leagueName = sports[indexPath.row].strSport
         self.navigationController?.pushViewController(vc, animated: true)
     }

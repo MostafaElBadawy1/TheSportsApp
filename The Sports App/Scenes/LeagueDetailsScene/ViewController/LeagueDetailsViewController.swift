@@ -8,7 +8,10 @@
 import UIKit
 
 class LeagueDetailsViewController: UIViewController {
-    var passedDataz : League?
+    var passedDataToLeagueDetailsVCfromDB : Bookmarks?
+    var bookmarksModel = [Bookmarks]()
+    var idLeague: String?
+    var passedDataToLeagueDetailsVC : League?
     var passedDatavc : Teams?
     var teams =  [Teams]()
     var leagueDetailsViewModel = LeagueDetailsViewModel()
@@ -16,21 +19,17 @@ class LeagueDetailsViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBAction func favoriteButton(_ sender: UIButton) {
-        if bookmarkBtn.titleLabel?.text == " " {
-            //
-            Bookmarks(context: self.context).leagureTitle = leagueName.text ?? ""
+//        if leagueName.text == Bookmarks(context: self.context).leagureTitle{
+            Bookmarks(context: self.context).leagureTitle = passedDataToLeagueDetailsVC?.strLeague ?? ""
+            Bookmarks(context: self.context).strBadge = passedDataToLeagueDetailsVC?.strBadge ?? ""
+            Bookmarks(context: self.context).strLeague = passedDataToLeagueDetailsVC?.strYoutube ?? ""
             do {
                 try self.context.save()
-                bookmarkBtn.setTitle("   ", for: .normal)
                 bookmarkBtn.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
             } catch {
                 print("Error")
             }
-            //
-        } else {
-            bookmarkBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
-            // delete logic
-        }
+
     }
     @IBOutlet weak var leagueName: UILabel!
     @IBOutlet weak var bookmarkBtn: UIButton!
@@ -41,20 +40,36 @@ class LeagueDetailsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(passedDataToLeagueDetailsVC?.idLeague)
+       print("zazazazazazazazazazazazazaza")
         leagueDetailsTableView.delegate = self
         leagueDetailsTableView.dataSource = self
         leagueDetailsTableView.register(UINib(nibName: "UpcomingEventsTableViewCell", bundle: .main), forCellReuseIdentifier: "UpcomingEventsTableViewCell")
         leagueDetailsTableView.register(UINib(nibName: "LatestResultsTableViewCell", bundle: .main), forCellReuseIdentifier: "LatestResultsTableViewCell")
         leagueDetailsTableView.register(UINib(nibName: "TeamsTableViewCell", bundle: .main), forCellReuseIdentifier: "TeamsTableViewCell")
-        leagueName.text = passedDataz?.strLeague
+        leagueName.text = passedDataToLeagueDetailsVC?.strLeague
+        leagueName.text = passedDataToLeagueDetailsVCfromDB?.strLeague
+        GlobalNotificationCenter().nc.addObserver(self, selector: #selector(presentVC), name: Notification.Name("present"), object: nil)
         //leagueName.layer.cornerCurve = .circular
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        leagueName.text = passedDataToLeagueDetailsVC?.strLeague
+//        if Bookmarks(context: context).leagureTitle == passedDataToLeagueDetailsVC?.strLeague  {
+//            bookmarkBtn.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+//                } else if Bookmarks(context: context).leagureTitle != leagueName.text {
+//                    bookmarkBtn.setImage(UIImage(systemName: "bookmarkr"), for: .normal)
+//                }
         // check if item is availabe or not
         // if aviable bookmarks.fill image
         // else bookmarks
     }
+    @objc func presentVC(_ sender: UITapGestureRecognizer? = nil) {
+            
+            let vc = UIStoryboard(name: "TeamDetails", bundle: .main).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
     
    }
 extension LeagueDetailsViewController: UITableViewDataSource {

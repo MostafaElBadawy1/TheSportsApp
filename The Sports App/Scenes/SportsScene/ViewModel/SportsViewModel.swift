@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class SportsViewModel {
     let apiService: ApiService
-    init(apiService: ApiService = NetworkManager()) {
+    init(apiService: ApiService = NetworkManager.shared) {
         self.apiService = apiService
     }
     func fetch() async ->  [Sport]? {

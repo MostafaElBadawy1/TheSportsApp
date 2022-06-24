@@ -17,6 +17,7 @@ class LatestResultsTableViewCell: UITableViewCell {
         latestResultsCollectionViewInTableViewCell.dataSource = self
         latestResultsCollectionViewInTableViewCell.register(UINib(nibName: "LatestResultsCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "LatestResultsCollectionViewCell")
         fetchLatestResultsData()
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,7 +27,7 @@ class LatestResultsTableViewCell: UITableViewCell {
     }
     func fetchLatestResultsData() {
         Task.init {
-            if let latestResults = await leagueDetailsViewModel.fetchLatestResults() {
+            if let latestResults = await leagueDetailsViewModel.fetchLatestResults(id: passedID!) {
                 
                 self.latestResults = latestResults
                 DispatchQueue.main.async {
@@ -77,6 +78,6 @@ extension LatestResultsTableViewCell: UICollectionViewDelegateFlowLayout{
         let leftAndRightPaddings: CGFloat = 1
         let numberOfItemsPerRow: CGFloat = 2.0
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-        return CGSize(width: width, height: width)
+        return CGSize(width: width, height: 130)
     }
 }

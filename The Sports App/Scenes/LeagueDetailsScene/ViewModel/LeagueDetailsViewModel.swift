@@ -8,30 +8,29 @@
 import Foundation
 
 class LeagueDetailsViewModel {
-    //static let shared = LeagueDetailsViewModel()
-    //private init(){}
     //var leagueArray: [League]?
     //var filterSport: Sport?
+    var filterLeague : League?
+    
     let apiService: ApiService
-    init(apiService: ApiService = NetworkManager()) {
+    init(apiService: ApiService = NetworkManager.shared) {
         self.apiService = apiService
     }
     //MARK: Fetching Upcoming Events
-    func fetchUpcomingEvents() async ->  [UpcomtingEvents]? {
-        let upcomtingEventsData = try? await apiService.fetchNetworkingData(endPoint: "api/v1/json/2/eventsseason.php?id=4328&s=2022-2023", model: UpcomtingEventsModel.self)
-        //print(upcomtingEventsData)
+    func fetchUpcomingEvents(id: String) async ->  [UpcomtingEvents]? {
+        let endpoint = "api/v1/json/2/eventsseason.php?id=\(id)"
+        print(endpoint)
+        let upcomtingEventsData = try? await apiService.fetchNetworkingData(endPoint: endpoint, model: UpcomtingEventsModel.self)
         return upcomtingEventsData?.events
     }
     //MARK: Fetching Latest Results
-    func fetchLatestResults() async ->  [LatestResults]? {
-        let latestResultsData = try? await apiService.fetchNetworkingData(endPoint: "api/v1/json/2/eventsseason.php?id=4617", model: LatestResultsModel.self)
-        // print(latestResultsData)
+    func fetchLatestResults(id: String) async ->  [LatestResults]? {
+        let latestResultsData = try? await apiService.fetchNetworkingData(endPoint: "api/v1/json/2/eventsseason.php?id=\(id)", model: LatestResultsModel.self)
         return latestResultsData?.events
     }
     //MARK: Fetching Latest Results
     func fetchTeams() async ->  [Teams]? {
         let TeamsData = try? await apiService.fetchNetworkingData(endPoint: "api/v1/json/2/search_all_teams.php?l=English%20League%20Championship", model: TeamsModel.self)
-        // print(TeamsData)
         return TeamsData?.teams
     }
 }

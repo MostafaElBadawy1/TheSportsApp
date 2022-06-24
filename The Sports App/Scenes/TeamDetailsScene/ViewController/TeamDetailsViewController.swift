@@ -8,7 +8,14 @@
 import UIKit
 
 class TeamDetailsViewController: UIViewController {
-    var passedDataz : Teams?
+   // var passedDataz : Teams?
+//    @IBAction func backToLeagueDetailsVC(_ sender: UIButton) {
+//        dismiss(animated: true)
+//    }
+    @IBAction func backToLeagueDetailsVC(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

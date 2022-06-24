@@ -7,10 +7,10 @@
 import Foundation
 // MARK: - SportsModel
 struct LeaguesModel: Codable {
-    let leagues: [League]
+    let countries: [League]
 }
 // MARK: - League
 struct League: Codable {
-    let idLeague, strLeague, strSport: String
+    let strLeague, strSport, strYoutube, strBadge, idLeague: String
     let strLeagueAlternate: String?
 }
