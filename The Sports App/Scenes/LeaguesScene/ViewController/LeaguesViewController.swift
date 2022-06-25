@@ -62,12 +62,12 @@ extension LeaguesViewController: UITableViewDataSource {
         let cell = leaguesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
         cell.strLeague.text = leagues[indexPath.row].strLeague
         cell.strBadge.downloaded(from: leagues[indexPath.row].strBadge)
-        cell.cellDelegate = self
         cell.strBadge.layer.masksToBounds = true
         cell.strBadge.layer.cornerRadius =  cell.strBadge.frame.height/2
         cell.strBadge.layer.borderWidth = 0.5
         cell.strBadge.layer.borderColor = UIColor.black.cgColor
         cell.strBadge.clipsToBounds = true
+        cell.cellDelegate = self
         cell.index = indexPath
         return cell
     }

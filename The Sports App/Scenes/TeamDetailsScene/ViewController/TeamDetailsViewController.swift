@@ -6,21 +6,23 @@
 //
 
 import UIKit
-
 class TeamDetailsViewController: UIViewController {
-   // var passedDataz : Teams?
-//    @IBAction func backToLeagueDetailsVC(_ sender: UIButton) {
-//        dismiss(animated: true)
-//    }
+    var passedDataToTeamDetailsVC : Teams?
+    var teams =  [Teams]()
+    @IBOutlet weak var stadiumLabel: UILabel!
+    @IBOutlet weak var teamImageView: UIImageView!
+    @IBOutlet weak var teamNameLabel: UILabel!
     @IBAction func backToLeagueDetailsVC(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        ViewConfig()
     }
-    
-
+    func ViewConfig(){
+        teamNameLabel.text = passedDataToTeamDetailsVC?.strTeam
+        stadiumLabel.text = passedDataToTeamDetailsVC?.strStadium
+        teamImageView.downloaded(from: passedDataToTeamDetailsVC!.strTeamFanart1)
+    }
 }
+

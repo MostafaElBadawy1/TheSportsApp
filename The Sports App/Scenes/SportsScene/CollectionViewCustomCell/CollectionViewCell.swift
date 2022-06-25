@@ -8,16 +8,9 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-
     @IBOutlet weak var strsport: UILabel!
-    
     @IBOutlet weak var strsportThumb: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-    func configerCollectionCell() {
-        
     }
 }

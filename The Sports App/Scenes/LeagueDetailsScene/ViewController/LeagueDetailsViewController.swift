@@ -10,19 +10,20 @@ import UIKit
 class LeagueDetailsViewController: UIViewController {
     // MARK: - Propreties
     var passedDataToLeagueDetailsVCfromDB : Bookmarks?
-    var bookmarksModel = [Bookmarks]()
     var idLeague: String?
     var passedDataToLeagueDetailsVC : League?
     var passedDatavc : Teams?
     var teams =  [Teams]()
     var leagueDetailsViewModel = LeagueDetailsViewModel()
-    var upcomtingEvents = [Bookmarks]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     // MARK: - @IBOutlets
     @IBOutlet weak var leagueName: UILabel!
     @IBOutlet weak var bookmarkBtn: UIButton!
     @IBOutlet weak var leagueDetailsTableView: UITableView!
     // MARK: - @IBAction
+    @IBAction func backToLeaguesVC(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
     @IBAction func favoriteButton(_ sender: UIButton) {
         Bookmarks(context: self.context).leagureTitle = passedDataToLeagueDetailsVC?.strLeague ?? ""
         Bookmarks(context: self.context).strBadge = passedDataToLeagueDetailsVC?.strBadge ?? ""
@@ -33,9 +34,6 @@ class LeagueDetailsViewController: UIViewController {
         } catch {
             print("Error")
         }
-    }
-    @IBAction func backToLeaguesVC(_ sender: UIButton) {
-        dismiss(animated: true)
     }
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -48,7 +46,6 @@ class LeagueDetailsViewController: UIViewController {
         leagueName.text = passedDataToLeagueDetailsVC?.strLeague
         leagueName.text = passedDataToLeagueDetailsVCfromDB?.strLeague
         GlobalNotificationCenter().nc.addObserver(self, selector: #selector(presentVC), name: Notification.Name("present"), object: nil)
-        //leagueName.layer.cornerCurve = .circular
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

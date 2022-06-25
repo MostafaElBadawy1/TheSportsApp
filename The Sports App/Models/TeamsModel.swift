@@ -12,5 +12,5 @@ struct TeamsModel: Codable {
 }
 // MARK: - Teams
 struct Teams: Codable {
-    let strTeamFanart1, strTeam: String
+    let strTeamFanart1, strTeam, strStadium: String
 }

@@ -8,31 +8,29 @@
 import UIKit
 
 class UpcomingEventsTableViewCell: UITableViewCell {
-    
+    // MARK: - Propreties
     var upcomingEvents = LeagueDetailsViewController()
     var upcomtingEvents =  [UpcomtingEvents]()
     let leagueDetailsViewModel = LeagueDetailsViewModel()
-    
+    // MARK: - @IBOutlets
     @IBOutlet weak var UpcomingEventsCollectionViewInTableViewCell: UICollectionView!
+    // MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         UpcomingEventsCollectionViewInTableViewCell.delegate = self
         UpcomingEventsCollectionViewInTableViewCell.dataSource = self
         UpcomingEventsCollectionViewInTableViewCell.register(UINib(nibName: "UpcomingEventsCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "UpcomingEventsCollectionViewCell")
         fetchUpcomtingEventsData()
-
-        print(" print(upcomingEvents.passedDataToLeagueDetailsVC?.idLeague )")
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-        func fetchUpcomtingEventsData() {
+    func fetchUpcomtingEventsData() {
         Task.init {
             if let upcomtingEvents = await leagueDetailsViewModel.fetchUpcomingEvents(id: passedID!) {
                 self.upcomtingEvents = upcomtingEvents
-
                 DispatchQueue.main.async {
-               self.UpcomingEventsCollectionViewInTableViewCell.reloadData()
+                    self.UpcomingEventsCollectionViewInTableViewCell.reloadData()
                 }
             } else {
                 print("error")
@@ -40,19 +38,15 @@ class UpcomingEventsTableViewCell: UITableViewCell {
         }
     }
 }
+// MARK: - CollectionView
 extension UpcomingEventsTableViewCell: UICollectionViewDelegate {
-    
 }
 extension UpcomingEventsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         return upcomtingEvents.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = UpcomingEventsCollectionViewInTableViewCell.dequeueReusableCell(withReuseIdentifier: "UpcomingEventsCollectionViewCell", for: indexPath) as! UpcomingEventsCollectionViewCell
-        
-    
         cell.strEvent.text = upcomtingEvents[indexPath.row].strEvent
         cell.dateLabel.text = upcomtingEvents[indexPath.row].dateEvent
         cell.timeLabel.text = upcomtingEvents[indexPath.row].strTime
@@ -61,16 +55,11 @@ extension UpcomingEventsTableViewCell: UICollectionViewDataSource {
         cell.layer.borderWidth = 2.5
         cell.layer.borderColor = UIColor.black.cgColor
         cell.clipsToBounds = true
-        
         return cell
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 100
-//    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 25
     }
-    
 }
 extension UpcomingEventsTableViewCell: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

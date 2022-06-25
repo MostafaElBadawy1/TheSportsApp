@@ -22,7 +22,6 @@
 		A62B3E8028637F5200F7B526 /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B3E7F28637F5200F7B526 /* TeamDetailsViewModel.swift */; };
 		A62B3E822863AA2800F7B526 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B3E812863AA2800F7B526 /* BookmarksViewController.swift */; };
 		A62B3E872864837F00F7B526 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B3E862864837F00F7B526 /* BookmarksViewModel.swift */; };
-		A62B3E892864A2FD00F7B526 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B3E882864A2FD00F7B526 /* ViewController.swift */; };
 		A66219BE28625664000502DC /* UpcomingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66219BC28625664000502DC /* UpcomingEventsTableViewCell.swift */; };
 		A66219BF28625664000502DC /* UpcomingEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A66219BD28625664000502DC /* UpcomingEventsTableViewCell.xib */; };
 		A66219C228625676000502DC /* LatestResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66219C028625676000502DC /* LatestResultsTableViewCell.swift */; };
@@ -73,7 +72,6 @@
 		A62B3E7F28637F5200F7B526 /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
 		A62B3E812863AA2800F7B526 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		A62B3E862864837F00F7B526 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
-		A62B3E882864A2FD00F7B526 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A66219BC28625664000502DC /* UpcomingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsTableViewCell.swift; sourceTree = "<group>"; };
 		A66219BD28625664000502DC /* UpcomingEventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingEventsTableViewCell.xib; sourceTree = "<group>"; };
 		A66219C028625676000502DC /* LatestResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResultsTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				A6CDBA782860F1B4007E4FB6 /* Image+Ext.swift */,
-				A68EE50E28664A1E00FD0C0C /* NetworkMonitor.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -204,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				A62B3E862864837F00F7B526 /* BookmarksViewModel.swift */,
-				A62B3E882864A2FD00F7B526 /* ViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -246,6 +242,14 @@
 			path = TeamsTableViewCell;
 			sourceTree = "<group>";
 		};
+		A66EB4D628678EC7009E8E57 /* NetworkMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				A68EE50E28664A1E00FD0C0C /* NetworkMonitor.swift */,
+			);
+			path = NetworkMonitor;
+			sourceTree = "<group>";
+		};
 		A6B87274285F719E0065BC48 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +276,7 @@
 				A6F43850285F92800064E052 /* Models */,
 				A6F4386028607EE20064E052 /* DataBase */,
 				A62B3E7728637DF800F7B526 /* Extentions */,
+				A66EB4D628678EC7009E8E57 /* NetworkMonitor */,
 				A6B8728C285F71A00065BC48 /* Assets.xcassets */,
 				A6B87291285F71A00065BC48 /* Info.plist */,
 			);
@@ -554,7 +559,6 @@
 				A62B3E702863285500F7B526 /* TeamsModel.swift in Sources */,
 				A66219C228625676000502DC /* LatestResultsTableViewCell.swift in Sources */,
 				A629AD712862407E00E51F4E /* TeamsCollectionViewCell.swift in Sources */,
-				A62B3E892864A2FD00F7B526 /* ViewController.swift in Sources */,
 				A62B3E72286329CF00F7B526 /* LatestResultsModel.swift in Sources */,
 				A6F4384F285F927C0064E052 /* SportsModel.swift in Sources */,
 				A66219C628625684000502DC /* TeamsTableViewCell.swift in Sources */,
